@@ -1,0 +1,11 @@
+# Ignorar directorios __pycache__
+__pycache__/
+
+# Ignorar __pycache__ en directorios específicos
+database/__pycache__/
+models/__pycache__/
+routers/__pycache__/
+utils/__pycache__/
+
+# Ignorar el archivo app.log
+app.log
