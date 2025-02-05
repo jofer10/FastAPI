@@ -18,7 +18,7 @@ logging.basicConfig(
 
 logger = logging.getLogger("main")
 
-app = FastAPI()
+app = FastAPI() #prueba
 
 class TransactionMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
