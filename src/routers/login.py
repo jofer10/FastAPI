@@ -1,4 +1,4 @@
-import logging
+from src.utils.logger import get_logger
 import ast
 from datetime import datetime, timedelta
 import json
@@ -14,7 +14,7 @@ from src.utils.exception_handler import exception_db, excepciones_generales
 from src.models.response import LoginForm, LoginR
 
 # Importar el logger configurado
-logger = logging.getLogger("main")
+logger = get_logger("main")
 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_DURATION = 24

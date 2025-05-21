@@ -1,4 +1,4 @@
-import logging
+from src.utils.logger import setup_logging, get_logger
 from fastapi import FastAPI, Request
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -6,17 +6,10 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from src.routers import users, login
 from src.database.client import async_session
 
-# Configuración del logging
-logging.basicConfig(
-    level=logging.INFO,  # Nivel de logs: DEBUG, INFO, WARNING, ERROR, CRITICAL
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("app.log"),  # Guarda los logs en un archivo
-        # logging.StreamHandler()  # Muestra los logs en la consola
-    ]
-)
+# Configuración inicial del logger
+setup_logging()
 
-logger = logging.getLogger("main")
+logger = get_logger("main")
 
 app = FastAPI()
 
